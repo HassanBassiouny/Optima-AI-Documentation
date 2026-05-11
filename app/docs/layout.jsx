@@ -10,7 +10,7 @@ export default function Layout({ children }) {
           <img
             src="/logo.png"
             alt="Optima AI"
-            style={{ height: '36px', width: 'auto' }}
+            style={{ height: '52px', width: 'auto' }}
           />
         ),
         githubUrl: 'https://github.com/your-org/optimaai',
