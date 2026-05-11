@@ -6,7 +6,13 @@ export default function Layout({ children }) {
     <DocsLayout
       tree={source.pageTree}
       nav={{
-        title: '⚡ OptimaAi Docs',
+        title: (
+          <img
+            src="/logo.png"
+            alt="Optima AI"
+            style={{ height: '36px', width: 'auto' }}
+          />
+        ),
         githubUrl: 'https://github.com/your-org/optimaai',
       }}
     >
