@@ -68,6 +68,6 @@ Every `git push` to `main` auto-deploys to Vercel.
 
 ## Related
 
-- **Backend repo:** [github.com/your-org/optimaai-backend](https://github.com/optimaai26/Optimaai-Backend)
-- **Frontend repo:** [github.com/your-org/optimaai-frontend](https://github.com/optimaai26/optimaai-fe)
-- **Odoo repo:** [github.com/your-org/optimaai-frontend](https://github.com/optimaai26/odoo-optimaai)
+- **Backend repo:** [Optima Ai Backend](https://github.com/optimaai26/Optimaai-Backend)
+- **Frontend repo:** [Optima Ai Frontend](https://github.com/optimaai26/optimaai-fe)
+- **Odoo repo:** [Optima Ai Odoo](https://github.com/optimaai26/odoo-optimaai)
