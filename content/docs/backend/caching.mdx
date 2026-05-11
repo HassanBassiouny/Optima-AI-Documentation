@@ -3,9 +3,6 @@ title: Caching
 description: Redis caching strategy and TTL configuration
 ---
 
-
-import { Callout } from 'nextra/components'
-
 # Caching
 
 OptimaAi uses **Redis** to cache expensive operations — ML KPI loads and LLM API calls — so dashboards feel instant even under load.
@@ -18,9 +15,7 @@ REDIS_URL=redis://localhost:6379/0
 
 Default: `redis://localhost:6379/0`
 
-<Callout type="info">
-  Redis is **optional**. If it is unavailable at startup, the API falls back gracefully — all cache reads return `None` (triggering live computation) and writes are silently skipped. No errors are raised to the caller.
-</Callout>
+> **ℹ️ Note:** Redis is **optional**. If it is unavailable at startup, the API falls back gracefully — all cache reads return `None` (triggering live computation) and writes are silently skipped. No errors are raised to the caller.
 
 ## TTL Strategy
 

@@ -3,9 +3,6 @@ title: LLM & Prompts
 description: LangChain, OpenRouter and prompt engineering techniques
 ---
 
-
-import { Callout } from 'nextra/components'
-
 # LLM & Prompts
 
 OptimaAi uses **LangChain** with **OpenRouter** to power its two generative AI features: role-based recommendations and Business Model Canvas generation.
@@ -30,9 +27,7 @@ llm = ChatOpenAI(
 
 **Why `temperature=0.2`?** Business recommendations need to be consistent and data-driven. A low temperature reduces hallucination and keeps the model anchored to the provided metrics.
 
-<Callout type="info">
-  To use a more capable model (e.g. `openai/gpt-4o`, `anthropic/claude-3-5-sonnet`), simply change the `model` parameter. The LangChain abstraction means no other code changes are needed.
-</Callout>
+> **ℹ️ Note:** To use a more capable model (e.g. `openai/gpt-4o`, `anthropic/claude-3-5-sonnet`), simply change the `model` parameter. The LangChain abstraction means no other code changes are needed.
 
 ## Prompt Engineering Techniques
 

@@ -3,9 +3,6 @@ title: API Reference
 description: Complete REST API endpoint documentation
 ---
 
-
-import { Callout, Tabs, Tab } from 'nextra/components'
-
 # API Reference
 
 All endpoints are prefixed with `/api/v1`. The API follows REST conventions and returns JSON.
@@ -38,8 +35,6 @@ Predicts net revenue for a single order using the trained XGBoost/GBM revenue re
 | `month` | `int` | `6` |
 | `quarter` | `int` | `2` |
 
-<Tabs items={['Request', 'Response']}>
-  <Tab>
 ```json
 {
   "features": {
@@ -53,8 +48,8 @@ Predicts net revenue for a single order using the trained XGBoost/GBM revenue re
   }
 }
 ```
-  </Tab>
-  <Tab>
+  
+  
 ```json
 {
   "prediction": 807.30,
@@ -63,8 +58,7 @@ Predicts net revenue for a single order using the trained XGBoost/GBM revenue re
   "timestamp": "2026-05-11T10:00:00"
 }
 ```
-  </Tab>
-</Tabs>
+  
 
 ---
 
@@ -87,8 +81,6 @@ Returns churn probability and a risk classification for a customer.
 | `total_spent` | `float` | Lifetime spend in USD |
 | `avg_order_value` | `float` | Average order value |
 
-<Tabs items={['Request', 'Response']}>
-  <Tab>
 ```json
 {
   "features": {
@@ -101,8 +93,8 @@ Returns churn probability and a risk classification for a customer.
   }
 }
 ```
-  </Tab>
-  <Tab>
+  
+  
 ```json
 {
   "churn_probability": 0.7841,
@@ -111,8 +103,7 @@ Returns churn probability and a risk classification for a customer.
   "timestamp": "2026-05-11T10:00:00"
 }
 ```
-  </Tab>
-</Tabs>
+  
 
 **Risk Levels**
 
@@ -132,8 +123,6 @@ POST /api/v1/predict/growth
 
 Returns a 3-month forward revenue forecast.
 
-<Tabs items={['Request', 'Response']}>
-  <Tab>
 ```json
 {
   "features": {
@@ -141,8 +130,8 @@ Returns a 3-month forward revenue forecast.
   }
 }
 ```
-  </Tab>
-  <Tab>
+  
+  
 ```json
 {
   "forecast_3m": 45200.00,
@@ -151,8 +140,7 @@ Returns a 3-month forward revenue forecast.
   "timestamp": "2026-05-11T10:00:00"
 }
 ```
-  </Tab>
-</Tabs>
+  
 
 ---
 
@@ -185,15 +173,13 @@ POST /api/v1/recommend
 
 Generates a role-tailored business recommendation from live KPIs via LLM (OpenRouter). Results are cached per role for 1 hour.
 
-<Tabs items={['Request', 'Response']}>
-  <Tab>
 ```json
 {
   "role": "Sales Manager"
 }
 ```
-  </Tab>
-  <Tab>
+  
+  
 ```json
 {
   "id": 42,
@@ -204,8 +190,7 @@ Generates a role-tailored business recommendation from live KPIs via LLM (OpenRo
   "source": "live"
 }
 ```
-  </Tab>
-</Tabs>
+  
 
 Supported roles: `Sales Manager`, `Finance Controller`, `Executive` (or any custom string — the prompt adapts).
 
@@ -219,8 +204,6 @@ POST /api/v1/bmc
 
 Generates a complete 9-block Business Model Canvas using live ML KPIs. Cached for 24 hours.
 
-<Tabs items={['Request', 'Response']}>
-  <Tab>
 ```json
 {
   "platform_name": "OptimaAi",
@@ -228,8 +211,8 @@ Generates a complete 9-block Business Model Canvas using live ML KPIs. Cached fo
   "target_users": "SME Sales Managers, Finance Controllers, Executives"
 }
 ```
-  </Tab>
-  <Tab>
+  
+  
 ```json
 {
   "id": 7,
@@ -244,8 +227,7 @@ Generates a complete 9-block Business Model Canvas using live ML KPIs. Cached fo
   "source": "live"
 }
 ```
-  </Tab>
-</Tabs>
+  
 
 ---
 
@@ -296,6 +278,4 @@ Runs a RAG query against ingested documents. Retrieves top-3 relevant chunks fro
 }
 ```
 
-<Callout type="info">
-  The knowledge base only contains documents that have been explicitly uploaded via the datasets endpoint or manually ingested.
-</Callout>
+> **ℹ️ Note:** The knowledge base only contains documents that have been explicitly uploaded via the datasets endpoint or manually ingested.

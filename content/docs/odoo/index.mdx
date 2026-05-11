@@ -3,9 +3,6 @@ title: Overview
 description: Odoo ERP integration and data sources
 ---
 
-
-import { Callout } from 'nextra/components'
-
 # Odoo Integration
 
 OptimaAi reads business data from **Odoo ERP** (versions 16 and 17). Odoo is the source of truth for all ML training data and live prediction features.
@@ -33,9 +30,7 @@ OptimaAi currently uses a **CSV export** workflow:
 Odoo → Export CSV → data/ folder → train.py → optimaai_artefacts/ → API
 ```
 
-<Callout type="info">
-  A live Odoo API integration (via `xmlrpc` or the Odoo REST API) is planned for future versions. The current CSV pipeline is intentional — it decouples data freshness from model freshness, allowing controlled retraining schedules.
-</Callout>
+> **ℹ️ Note:** A live Odoo API integration (via `xmlrpc` or the Odoo REST API) is planned for future versions. The current CSV pipeline is intentional — it decouples data freshness from model freshness, allowing controlled retraining schedules.
 
 ## Planned: Live Odoo API Connection
 
@@ -74,6 +69,4 @@ For reliable ML model performance, minimum dataset sizes are recommended:
 | Growth Regressor | 12 months history | 24+ months |
 | Prophet | 12 data points | 36+ |
 
-<Callout type="warning">
-  With fewer than the minimum rows, models will train but evaluation metrics may be unreliable. The `quality_score` in the preprocessing pipeline can help assess data sufficiency.
-</Callout>
+> **⚠️ Warning:** With fewer than the minimum rows, models will train but evaluation metrics may be unreliable. The `quality_score` in the preprocessing pipeline can help assess data sufficiency.

@@ -3,9 +3,6 @@ title: Dataset Management
 description: File upload, preprocessing, and ChromaDB ingestion
 ---
 
-
-import { Callout } from 'nextra/components'
-
 # Dataset Management
 
 The Datasets module handles file uploads, automatic preprocessing, PostgreSQL storage, and ChromaDB ingestion — all triggered by a single API call.
@@ -105,9 +102,7 @@ Removes the database record. The cleaned table and ChromaDB entries are also rem
 - **Encoding** — converts text columns to usable representations
 - **Quality scoring** — outputs a 0–100 completeness/consistency score
 
-<Callout type="info">
-  Because the pipeline is dynamic, it works on any CSV shape — not just the Odoo exports the ML models were trained on. You can upload any business dataset and query it via the Knowledge Base.
-</Callout>
+> **ℹ️ Note:** Because the pipeline is dynamic, it works on any CSV shape — not just the Odoo exports the ML models were trained on. You can upload any business dataset and query it via the Knowledge Base.
 
 ## ChromaDB Integration
 

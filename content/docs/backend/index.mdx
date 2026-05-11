@@ -3,9 +3,6 @@ title: Overview
 description: Setup and configuration of the FastAPI backend
 ---
 
-
-import { Callout } from 'nextra/components'
-
 # Backend Overview
 
 The OptimaAi backend is a **FastAPI** application written in Python. It exposes a RESTful API consumed by the frontend dashboard, handles ML inference, orchestrates LLM calls, manages a Redis cache, and persists data to PostgreSQL.
@@ -97,9 +94,7 @@ app/
     └── improved_prompts.py
 ```
 
-<Callout type="warning">
-  The prediction endpoints will return a 500 error until you have run `python ml/train.py` at least once to generate model artefacts.
-</Callout>
+> **⚠️ Warning:** The prediction endpoints will return a 500 error until you have run `python ml/train.py` at least once to generate model artefacts.
 
 ## Health Check
 

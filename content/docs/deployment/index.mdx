@@ -3,9 +3,6 @@ title: Deployment Guide
 description: Docker, Nginx, Vercel and production checklist
 ---
 
-
-import { Callout, Tabs, Tab } from 'nextra/components'
-
 # Deployment Guide
 
 ## Prerequisites
@@ -85,8 +82,6 @@ docker-compose exec backend python ml/train.py
 
 ## Manual Deployment
 
-<Tabs items={['Backend', 'Frontend']}>
-  <Tab>
 ```bash
 cd optimaai-backend
 python -m venv venv
@@ -96,16 +91,15 @@ pip install -r requirements.txt
 # Create .env, then:
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 2
 ```
-  </Tab>
-  <Tab>
+  
+  
 ```bash
 cd optimaai-frontend
 npm install
 npm run build
 npm start         # Listens on port 3000
 ```
-  </Tab>
-</Tabs>
+  
 
 ---
 
@@ -166,9 +160,7 @@ server {
 - [ ] Run `python ml/train.py` at least once before starting the backend
 - [ ] Set up a cron job or Celery task for periodic retraining
 
-<Callout type="warning">
-  The `optimaai_artefacts/` directory must be preserved across deployments. If it is lost, all prediction endpoints will return 500 errors until training is re-run.
-</Callout>
+> **⚠️ Warning:** The `optimaai_artefacts/` directory must be preserved across deployments. If it is lost, all prediction endpoints will return 500 errors until training is re-run.
 
 ---
 

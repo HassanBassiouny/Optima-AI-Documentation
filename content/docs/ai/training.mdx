@@ -3,9 +3,6 @@ title: ML Training
 description: How to train the ML models and what gets created
 ---
 
-
-import { Callout } from 'nextra/components'
-
 # ML Training
 
 All models are trained via a single entry point: `python ml/train.py`.
@@ -78,9 +75,7 @@ Change these paths if your CSV files are named differently.
 
 ## Retraining Schedule
 
-<Callout type="info">
-  There is no automated scheduler — retraining is manual. Run `python ml/train.py` whenever new Odoo data is available. The API picks up the new artefacts on the next cache expiry (max 5 minutes).
-</Callout>
+> **ℹ️ Note:** There is no automated scheduler — retraining is manual. Run `python ml/train.py` whenever new Odoo data is available. The API picks up the new artefacts on the next cache expiry (max 5 minutes).
 
 Recommended retraining cadence:
 

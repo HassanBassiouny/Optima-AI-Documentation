@@ -3,9 +3,6 @@ title: Knowledge Base (RAG)
 description: ChromaDB RAG setup, ingestion, and querying
 ---
 
-
-import { Callout } from 'nextra/components'
-
 # Knowledge Base (RAG)
 
 The Knowledge Base allows users to ask natural language questions about their business data and uploaded documents. It uses Retrieval-Augmented Generation (RAG) backed by **ChromaDB** and **SentenceTransformers**.
@@ -107,9 +104,7 @@ QUESTION: {user_query}
 Answer in 3–5 sentences. Cite the source document where relevant.
 ```
 
-<Callout type="warning">
-  The LLM is instructed to only answer from retrieved context. If no relevant chunks are found, it will say so rather than hallucinate. This is intentional — grounding is more important than always having an answer.
-</Callout>
+> **⚠️ Warning:** The LLM is instructed to only answer from retrieved context. If no relevant chunks are found, it will say so rather than hallucinate. This is intentional — grounding is more important than always having an answer.
 
 ## Fixes Applied to Knowledge Base
 

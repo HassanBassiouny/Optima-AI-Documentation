@@ -3,9 +3,6 @@ title: Overview
 description: Next.js frontend setup and configuration
 ---
 
-
-import { Callout } from 'nextra/components'
-
 # Frontend Overview
 
 The OptimaAi frontend is a **Next.js** application styled with **Tailwind CSS**. It provides a role-aware dashboard that visualises ML predictions, KPI trends, AI recommendations, and dataset management in real time.
@@ -52,6 +49,4 @@ The frontend adapts its dashboard view based on the selected role. Three primary
 | **Finance Controller** | KPI metrics, forecast accuracy, model performance |
 | **Executive** | High-level trends, AI recommendation summary, BMC |
 
-<Callout type="info">
-  Role selection is a UI state — it controls which recommendation is fetched from `/api/v1/recommend` and which KPI cards are highlighted.
-</Callout>
+> **ℹ️ Note:** Role selection is a UI state — it controls which recommendation is fetched from `/api/v1/recommend` and which KPI cards are highlighted.
